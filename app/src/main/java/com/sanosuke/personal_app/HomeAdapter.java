@@ -35,7 +35,7 @@ public class HomeAdapter extends ArrayAdapter<HomeModel> {
             title.setText(homeModel.getTitle());
         }
         if (homeModel != null) {
-            image.setImageResource(homeModel.getImgid());
+            image.setImageResource(homeModel.getImgId());
         }
         return listItemView;
     }
