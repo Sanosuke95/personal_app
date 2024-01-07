@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         Resources res = getResources();
         menuView = res.getStringArray(R.array.home_menu);
-
-        ImageView imageView = findViewById(R.id.home_image);
-        imageView.setImageResource(R.drawable.icon_music);
 
         gridView = findViewById(R.id.main_view);
         ArrayList<HomeModel> homeModelArrayList = new ArrayList<>();
@@ -49,10 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
-                String pos = gridView.getItemAtPosition(position).toString();
-                //Log.i("lenght", gridView.getTransitionName());
-                Log.i("gridView", "The first element :" + pos);
-                Log.i("gridView", "Element : " + view);
+                String item = ((TextView)view.findViewById(R.id.home_card_title)).getText().toString();
+                Log.i("gridView", "The first element :" + item);
             }
         });
     }
