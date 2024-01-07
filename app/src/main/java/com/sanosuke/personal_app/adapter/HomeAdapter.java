@@ -1,4 +1,4 @@
-package com.sanosuke.personal_app;
+package com.sanosuke.personal_app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,11 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.sanosuke.personal_app.R;
+import com.sanosuke.personal_app.model.HomeModel;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeAdapter extends ArrayAdapter<HomeModel> {
     View listItemView;
-    public HomeAdapter(@NonNull Context context, @NonNull ArrayList<HomeModel> homeList) {
+    public HomeAdapter(@NonNull Context context, @NonNull List<HomeModel> homeList) {
         super(context, 0,homeList);
     }
 

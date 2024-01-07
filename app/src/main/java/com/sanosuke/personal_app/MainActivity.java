@@ -2,6 +2,7 @@ package com.sanosuke.personal_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +12,15 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sanosuke.personal_app.adapter.HomeAdapter;
+import com.sanosuke.personal_app.model.HomeModel;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     GridView gridView;
     String[] menuView;
+    static final String LOG_GRIDVIEW = "LOG_GRIDVIEW";
 
 
     @Override
@@ -47,8 +52,25 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
                 String item = ((TextView)view.findViewById(R.id.home_card_title)).getText().toString();
-                Log.i("gridView", "The first element :" + item);
+                switch (item) {
+                    case "music":
+                        changeActivity(MusicActivity.class);
+                        break;
+                    case "movies":
+                        changeActivity(MoviesActivity.class);
+                        break;
+                    case "scan":
+                        changeActivity(ScanActivity.class);
+                        break;
+                    default:Log.i(LOG_GRIDVIEW, "NOt element selected in gridView");
+                }
+                Log.i(LOG_GRIDVIEW, "The first element :" + item);
             }
         });
+    }
+
+    public void changeActivity(Class c) {
+        Intent intent = new Intent(this, c);
+        startActivities(new Intent[]{intent});
     }
 }

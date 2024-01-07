@@ -1,4 +1,4 @@
-package com.sanosuke.personal_app;
+package com.sanosuke.personal_app.model;
 
 public class HomeModel {
 

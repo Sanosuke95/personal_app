@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center_vertical"
     android:layout_margin="10dp"
     tools:context=".MainActivity">
 
@@ -11,23 +12,20 @@
         android:id="@+id/home_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="23sp"
-        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:paddingTop="120sp"
+        android:text="@string/home"
         />
 
     <GridView
         android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:verticalSpacing="20dp"
+        android:horizontalSpacing="30dp"
+        android:paddingTop="70dp"
         android:numColumns="2"/>
-
-
-    <ImageView
-        android:id="@+id/home_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"
-        tools:ignore="ContentDescription" />
 
 </LinearLayout>
